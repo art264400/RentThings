@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
+using InstagramApiSharp.API.Builder;
+using InstagramApiSharp.Classes;
+
 
 namespace RentThings.Controllers
 {
@@ -10,6 +14,15 @@ namespace RentThings.Controllers
     {
         public ActionResult Index()
         {
+            var userSession = new UserSessionData
+            {
+                UserName ="asoschel",
+                Password ="815600A"
+            };
+            var api = InstaApiBuilder.CreateBuilder()
+                // required
+                .SetUser(userSession);
+
             return View();
         }
 
