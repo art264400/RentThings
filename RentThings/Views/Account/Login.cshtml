@@ -1,0 +1,20 @@
+﻿@model RentThings.Models.Tag.LoginTag
+@{
+    ViewBag.Title = "Аутентификация";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div>
+        @Html.LabelFor(m=>m.Login)
+        @Html.EditorFor(m=>m.Login)
+    </div>
+    <div>
+        @Html.LabelFor(m=>m.Password)
+        @Html.EditorFor(m=>m.Password)
+    </div>
+    <input type="submit" value="Войти"/>
+}

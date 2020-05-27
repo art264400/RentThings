@@ -14,15 +14,7 @@ namespace RentThings.Controllers
     {
         public ActionResult Index()
         {
-            var userSession = new UserSessionData
-            {
-                UserName ="asoschel",
-                Password ="815600A"
-            };
-            var api = InstaApiBuilder.CreateBuilder()
-                // required
-                .SetUser(userSession);
-
+           
             return View();
         }
 
