@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -9,6 +10,7 @@ using LightInject;
 using Ninject;
 using Ninject.Modules;
 using Ninject.Web.Mvc;
+using RentThings.Context;
 using RentThings.Interfaces;
 using RentThings.Services;
 using RentThings.Util;
@@ -18,7 +20,7 @@ namespace RentThings
     {
         protected void Application_Start()
         {
-            
+            //Database.SetInitializer<RentThingsContext>(new LibraryDbInit());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

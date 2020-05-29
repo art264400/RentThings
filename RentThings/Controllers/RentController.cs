@@ -20,8 +20,14 @@ namespace RentThings.Controllers
         // GET: Rent
         public ActionResult BrowseItems()
         {
-            var products = _rentService.GetAllProducts();
+            var products = _rentService.GetAllFreeProducts();
             return View(products);
+        }
+
+        public ActionResult DetailProduct(int id)
+        {
+            var product = _rentService.GetProductById(id);
+            return View(product);
         }
     }
 }

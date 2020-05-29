@@ -9,6 +9,7 @@ namespace RentThings.Interfaces
 {
     public interface IRentService
     {
-        Product[] GetAllProducts();
+        Product[] GetAllFreeProducts();
+        Product GetProductById(int id);
     }
 }
